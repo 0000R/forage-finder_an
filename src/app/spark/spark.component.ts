@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Dwarf } from "../dwarf";
 import { DwarfService } from "../dwarf.service";
+import { Http, Headers, Response } from "@angular/http";
 
 @Component({
   selector: "app-spark",
@@ -13,9 +14,15 @@ export class SparkComponent implements OnInit {
   dwarves: Dwarf[];
 
   getDwarves() {
-    this.dwarves = this.dwarfService.getDwarves();
+    // this.dwarves = this.dwarfService.getDwarves();
+    this.dwarfService.getDwarves().subscribe(d => {
+      this.dwarves = d;
+    });
   }
-
+  deleteDwarf(id: string) {
+    this.dwarfService.deleteDwarf(id).subscribe();
+    this.dwarves = this.dwarves.filter(x => x._id != id);
+  }
   ngOnInit() {
     this.getDwarves();
   }
