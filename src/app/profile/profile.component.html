@@ -30,9 +30,9 @@
   <!-- list for occupation -->
 
   <div class="form-group row">
-    <label for="dwarfOccupation" class="col-sm-3 col-form-label">Occupation</label>
+    <label for="dwarfOccupation" class="col-sm-2 col-form-label">Occupation</label>
     <div class="col-sm-9">
-      <select class="dwarfOccupation" name="dwarfOccupation" [(ngModel)]="currentDwarf.occupation">
+      <select class="form-control" name="dwarfOccupation" [(ngModel)]="currentDwarf.occupation">
         <option *ngFor="let occupation of occupations">{{occupation}}</option>
       </select>
     </div>
@@ -40,20 +40,39 @@
   <!-- list for favoriteDrink -->
 
   <div class="form-group row">
-    <label for="dwarfFavoriteDrink" class="col-sm-3 col-form-label">Favorite Drink</label>
+    <label for="dwarfFavoriteDrink" class="col-sm-2 col-form-label">Favorite Drink</label>
     <div class="col-sm-9">
-      <select class="dwarfFavoriteDrink" name="dwarfFavoriteDrink" [(ngModel)]="currentDwarf.favoriteDrink">
+      <select class="form-control" name="dwarfFavoriteDrink" [(ngModel)]="currentDwarf.favoriteDrink">
         <option *ngFor="let favoriteDrink of favoriteDrinks">{{favoriteDrink}}</option>
       </select>
     </div>
   </div>
 
   <div class="form-group row">
-    <button type="submit" class=" offset-sm-3 btn btn-primary" (click)="submitDwarf()" [disabled]="!currentDwarf.name
+    <label for="dwarfClan" class="col-sm-2 col-form-label">Clan</label>
+    <div class="col-sm-9">
+      <select class="form-control" name="dwarfClan" [(ngModel)]="currentDwarf.clan">
+        <option *ngFor="let clan of clans">{{clan}}</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="dwarfWeapon" class="col-sm-2 col-form-label">Weapon</label>
+    <div class="col-sm-9">
+      <select class="form-control" name="dwarfWeapon" [(ngModel)]="currentDwarf.weapon">
+        <option *ngFor="let weapon of weapons">{{weapon}}</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <button type="submit" class=" offset-sm-2 btn btn-primary" (click)="submitDwarf()" [disabled]="!currentDwarf.name
     || !currentDwarf.height
     || !currentDwarf.beardColor
     || !currentDwarf.beardLength
     || !currentDwarf.favoriteDrink
-    || !currentDwarf.occupation">Set in Stone</button>
+    || !currentDwarf.occupation
+    || !currentDwarf.clan">Set in Stone</button>
   </div>
 </form>

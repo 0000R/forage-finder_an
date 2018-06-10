@@ -46,6 +46,64 @@ export class DwarfService {
   // getDwarves() {
   //   return this.dwarves;
   // }
+  favoriteDrinks: string[] = [
+    "Beer",
+    "Mai-Tai",
+    "Dragon's Blood",
+    "Rob Roy",
+    "Elf Earwax",
+    "Apple Juice"
+  ];
+
+  occupations: string[] = [
+    "Smith",
+    "Forger",
+    "Farmer",
+    "Bladesmith",
+    "Gemsmith",
+    "Miner",
+    "Warrior",
+    "Mercenary",
+    "Bootlegger",
+    "Breeder",
+    "Mouth Breather"
+  ];
+
+  clans: string[] = [
+    "Bedazzlers",
+    "Sea Seekers",
+    "Microsofters",
+    "Applers",
+    "Pit Sniffers",
+    "Grave Diggers"
+  ];
+
+  weapons: string[] = [
+    "Unicorn Horn",
+    "B-Axe",
+    "Dagger",
+    "Tickle Hands",
+    "Fairy Wand",
+    "Magic",
+    "Butterfly",
+    "Fishing Pole"
+  ];
+
+  getDrinks() {
+    return this.favoriteDrinks;
+  }
+
+  getOccupations() {
+    return this.occupations;
+  }
+
+  getClans() {
+    return this.clans;
+  }
+
+  getWeapons() {
+    return this.weapons;
+  }
 
   getDwarves(): Observable<Dwarf[]> {
     return this.http.get<Dwarf[]>(

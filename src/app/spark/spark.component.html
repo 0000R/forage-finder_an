@@ -4,11 +4,21 @@
     <button class="btn btn-danger" (click)="deleteDwarf(dwarf._id)">Delete</button>
     <p class="card-text">
       {{dwarf._id}}
-      <br/>Height: {{dwarf.height}}
-      <br/> Beard color:{{dwarf.beardColor}}
+      <br/>Beard Color:
       <span [style.color]="dwarf.beardColor">{{dwarf.beardColor}}</span>
-      <br/> Beard length:{{dwarf.beardLength}}
+      <app-beard color="{{dwarf.beardColor}}" height="100"></app-beard>
+      <br/> Clan:{{dwarf.clan}}
+      <br/>Height: {{dwarf.height}}
+      <br/>Weapon: {{dwarf.weapon}}
       <br/> Favorite Drink:{{dwarf.favoriteDrink}}
+      <br/> Beard length:{{dwarf.beardLength}}
+
+
+
+
+
+
+
 
 
     </p>
