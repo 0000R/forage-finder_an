@@ -1,27 +1,47 @@
-<div class="card" *ngFor="let dwarf of dwarves">
-  <div class="card-body">
-    <h5 class="card-title">{{dwarf.name}} the {{dwarf.occupation}}</h5>
-    <button class="btn btn-danger" (click)="deleteDwarf(dwarf._id)">Delete</button>
-    <p class="card-text">
-      {{dwarf._id}}
-      <br/>Beard Color:
-      <span [style.color]="dwarf.beardColor">{{dwarf.beardColor}}</span>
+<div class="wrapper">
+
+  <div class="card" *ngFor="let dwarf of dwarves">
+    <div class="card-body">
+
+      <h5 class="card-title">{{dwarf.name}} the {{dwarf.occupation}}</h5>
       <app-beard color="{{dwarf.beardColor}}" height="100"></app-beard>
-      <br/> Clan:{{dwarf.clan}}
-      <br/>Height: {{dwarf.height}}
-      <br/>Weapon: {{dwarf.weapon}}
-      <br/> Favorite Drink:{{dwarf.favoriteDrink}}
-      <br/> Beard length:{{dwarf.beardLength}}
+      <p class="card-text">
+        <br/>Beard Color:
+        <span [style.color]="dwarf.beardColor">{{dwarf.beardColor}}</span>
+        <br/> Clan:{{dwarf.clan}}
+        <br/>Height: {{dwarf.height}}
+        <br/>Weapon: {{dwarf.weapon}}
+        <br/> Favorite Drink:{{dwarf.favoriteDrink}}
+        <br/> Beard length:{{dwarf.beardLength}} {{dwarf._id}}
+      </p>
 
-
-
-
-
-
-
-
-
-    </p>
+    </div>
+    <div class="card-footer">
+      <button class="btn btn-danger" (click)="deleteDwarf(dwarf._id)">Remove Profile</button>
+    </div>
 
   </div>
+
 </div>
+
+<!-- original below :)
+  <div class="card" *ngFor="let dwarf of dwarves">
+    <div class="card-body">
+      <h5 class="card-title">{{dwarf.name}} the {{dwarf.occupation}}</h5>
+      <button class="btn btn-danger" (click)="deleteDwarf(dwarf._id)">Delete</button>
+      <p class="card-text">
+        {{dwarf._id}}
+        <br/>Beard Color:
+        <span [style.color]="dwarf.beardColor">{{dwarf.beardColor}}</span>
+        <app-beard color="{{dwarf.beardColor}}" height="100"></app-beard>
+        <br/> Clan:{{dwarf.clan}}
+        <br/>Height: {{dwarf.height}}
+        <br/>Weapon: {{dwarf.weapon}}
+        <br/> Favorite Drink:{{dwarf.favoriteDrink}}
+        <br/> Beard length:{{dwarf.beardLength}}
+  
+      </p>
+  
+    </div>
+    
+  </div> -->

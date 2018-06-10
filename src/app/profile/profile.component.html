@@ -1,78 +1,81 @@
 <h3>Your Profile</h3>
-
-<form>
-  <div class="form-group row">
-    <label for="dwarfName" class="col-sm-2 col-form-label">Name</label>
-    <div class="col-sm-9">
-      <input type="text" class="form-control" id="dwarfName" name="dwarfName" [(ngModel)]="currentDwarf.name">
+<div class="card-body">
+  <form>
+    <div class="form-group row">
+      <label for="dwarfName" class="col-sm-2 col-form-label">Name</label>
+      <div class="col-sm-9">
+        <input type="text" class="form-control" id="dwarfName" name="dwarfName" [(ngModel)]="currentDwarf.name">
+      </div>
     </div>
-  </div>
-  <div class="form-group row">
-    <label for="dwarfHeight" class="col-sm-2 col-form-label">Height</label>
-    <div class="col-sm-9">
-      <input type="text" class="form-control" id="dwarfHeight" name="dwarfHeight" [(ngModel)]="currentDwarf.height">
+    <div class="form-group row">
+      <label for="dwarfHeight" class="col-sm-2 col-form-label">Height</label>
+      <div class="col-sm-9">
+        <input type="text" class="form-control" id="dwarfHeight" name="dwarfHeight" [(ngModel)]="currentDwarf.height">
+      </div>
     </div>
-  </div>
-  <div class="form-group row">
-    <label for="dwarfBeardColor" class="col-sm-2 col-form-label">Beard Color</label>
-    <div class="col-sm-9">
-      <input type="text" class="form-control" id="dwarfBeardColor" name="dwarfBeardColor" [(ngModel)]="currentDwarf.beardColor">
+    <div class="form-group row">
+      <label for="dwarfBeardColor" class="col-sm-2 col-form-label">Beard Color</label>
+      <div class="col-sm-9">
+        <input type="text" class="form-control" id="dwarfBeardColor" name="dwarfBeardColor" [(ngModel)]="currentDwarf.beardColor">
+      </div>
     </div>
-  </div>
-  <div class="form-group row">
-    <label for="dwarfBeardLength" class="col-sm-2 col-form-label">Beard Length</label>
-    <div class="col-sm-9">
-      <input type="text" class="form-control" id="dwarfBeardLength" name="dwarfBeardLength" [(ngModel)]="currentDwarf.beardLength">
+    <div class="form-group row">
+      <label for="dwarfBeardLength" class="col-sm-2 col-form-label">Beard Length</label>
+      <div class="col-sm-9">
+        <input type="text" class="form-control" id="dwarfBeardLength" name="dwarfBeardLength" [(ngModel)]="currentDwarf.beardLength">
+      </div>
     </div>
-  </div>
 
 
-  <!-- list for occupation -->
+    <!-- list for occupation -->
 
-  <div class="form-group row">
-    <label for="dwarfOccupation" class="col-sm-2 col-form-label">Occupation</label>
-    <div class="col-sm-9">
-      <select class="form-control" name="dwarfOccupation" [(ngModel)]="currentDwarf.occupation">
-        <option *ngFor="let occupation of occupations">{{occupation}}</option>
-      </select>
+    <div class="form-group row">
+      <label for="dwarfOccupation" class="col-sm-2 col-form-label">Occupation</label>
+      <div class="col-sm-9">
+        <select class="form-control" name="dwarfOccupation" [(ngModel)]="currentDwarf.occupation">
+          <option *ngFor="let occupation of occupations">{{occupation}}</option>
+        </select>
+      </div>
     </div>
-  </div>
-  <!-- list for favoriteDrink -->
+    <!-- list for favoriteDrink -->
 
-  <div class="form-group row">
-    <label for="dwarfFavoriteDrink" class="col-sm-2 col-form-label">Favorite Drink</label>
-    <div class="col-sm-9">
-      <select class="form-control" name="dwarfFavoriteDrink" [(ngModel)]="currentDwarf.favoriteDrink">
-        <option *ngFor="let favoriteDrink of favoriteDrinks">{{favoriteDrink}}</option>
-      </select>
+    <div class="form-group row">
+      <label for="dwarfFavoriteDrink" class="col-sm-2 col-form-label">Favorite Drink</label>
+      <div class="col-sm-9">
+        <select class="form-control" name="dwarfFavoriteDrink" [(ngModel)]="currentDwarf.favoriteDrink">
+          <option *ngFor="let favoriteDrink of favoriteDrinks">{{favoriteDrink}}</option>
+        </select>
+      </div>
     </div>
-  </div>
 
-  <div class="form-group row">
-    <label for="dwarfClan" class="col-sm-2 col-form-label">Clan</label>
-    <div class="col-sm-9">
-      <select class="form-control" name="dwarfClan" [(ngModel)]="currentDwarf.clan">
-        <option *ngFor="let clan of clans">{{clan}}</option>
-      </select>
+    <div class="form-group row">
+      <label for="dwarfClan" class="col-sm-2 col-form-label">Clan</label>
+      <div class="col-sm-9">
+        <select class="form-control" name="dwarfClan" [(ngModel)]="currentDwarf.clan">
+          <option *ngFor="let clan of clans">{{clan}}</option>
+        </select>
+      </div>
     </div>
-  </div>
 
-  <div class="form-group row">
-    <label for="dwarfWeapon" class="col-sm-2 col-form-label">Weapon</label>
-    <div class="col-sm-9">
-      <select class="form-control" name="dwarfWeapon" [(ngModel)]="currentDwarf.weapon">
-        <option *ngFor="let weapon of weapons">{{weapon}}</option>
-      </select>
+    <div class="form-group row">
+      <label for="dwarfWeapon" class="col-sm-2 col-form-label">Weapon</label>
+      <div class="col-sm-9">
+        <select class="form-control" name="dwarfWeapon" [(ngModel)]="currentDwarf.weapon">
+          <option *ngFor="let weapon of weapons">{{weapon}}</option>
+        </select>
+      </div>
     </div>
-  </div>
 
-  <div class="form-group row">
-    <button type="submit" class=" offset-sm-2 btn btn-primary" (click)="submitDwarf()" [disabled]="!currentDwarf.name
+    <div class="form-group row">
+      <button type="submit" class=" offset-sm-2 btn btn-primary" (click)="submitDwarf()" [disabled]="!currentDwarf.name
     || !currentDwarf.height
     || !currentDwarf.beardColor
     || !currentDwarf.beardLength
     || !currentDwarf.favoriteDrink
     || !currentDwarf.occupation
     || !currentDwarf.clan">Set in Stone</button>
-  </div>
-</form>
+    </div>
+
+
+  </form>
+</div>

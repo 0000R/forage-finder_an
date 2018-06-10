@@ -1,4 +1,16 @@
-body {
-  margin: auto;
-  width: 200px;
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  /* max-height: 900px; */
+
+  /* flex: 0 1 24%; */
+  /* margin: auto; */
+  /* text-align: center; */
+}
+
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start, stretch;
+  justify-content: space-around;
 }
