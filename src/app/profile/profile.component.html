@@ -33,7 +33,7 @@
       <label for="dwarfOccupation" class="col-sm-2 col-form-label">Occupation</label>
       <div class="col-sm-9">
         <select class="form-control" name="dwarfOccupation" [(ngModel)]="currentDwarf.occupation">
-          <option *ngFor="let occupation of occupations">{{occupation}}</option>
+          <option *ngFor="let occupation of occupations" [value]="occupation.name">{{occupation.name}}</option>
         </select>
       </div>
     </div>
@@ -43,7 +43,7 @@
       <label for="dwarfFavoriteDrink" class="col-sm-2 col-form-label">Favorite Drink</label>
       <div class="col-sm-9">
         <select class="form-control" name="dwarfFavoriteDrink" [(ngModel)]="currentDwarf.favoriteDrink">
-          <option *ngFor="let favoriteDrink of favoriteDrinks">{{favoriteDrink}}</option>
+          <option *ngFor="let favoriteDrink of favoriteDrinks" [value]="favoriteDrink.name">{{favoriteDrink.name}}</option>
         </select>
       </div>
     </div>
@@ -52,7 +52,7 @@
       <label for="dwarfClan" class="col-sm-2 col-form-label">Clan</label>
       <div class="col-sm-9">
         <select class="form-control" name="dwarfClan" [(ngModel)]="currentDwarf.clan">
-          <option *ngFor="let clan of clans">{{clan}}</option>
+          <option *ngFor="let clan of clans" [value]="clan.name">{{clan.name}}</option>
         </select>
       </div>
     </div>
@@ -61,7 +61,7 @@
       <label for="dwarfWeapon" class="col-sm-2 col-form-label">Weapon</label>
       <div class="col-sm-9">
         <select class="form-control" name="dwarfWeapon" [(ngModel)]="currentDwarf.weapon">
-          <option *ngFor="let weapon of weapons">{{weapon}}</option>
+          <option *ngFor="let weapon of weapons" [value]="weapon.name">{{weapon.name}}</option>
         </select>
       </div>
     </div>

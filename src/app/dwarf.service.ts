@@ -7,6 +7,10 @@ import {
   HttpResponse
 } from "@angular/common/http";
 import { Observable } from "rxjs";
+import { FavDrink } from "./favDrink";
+import { Occupations } from "./occupations";
+import { Clans } from "../clans";
+import { Weapons } from "./weapons";
 
 @Injectable({
   providedIn: "root"
@@ -46,6 +50,7 @@ export class DwarfService {
   // getDwarves() {
   //   return this.dwarves;
   // }
+
   favoriteDrinks: string[] = [
     "Beer",
     "Mai-Tai",
@@ -89,38 +94,41 @@ export class DwarfService {
     "Fishing Pole"
   ];
 
-  getDrinks() {
-    return this.favoriteDrinks;
+  getDrinks(): Observable<FavDrink[]> {
+    // return this.favoriteDrinks;
+    return this.http.get<FavDrink[]>("http://localhost:8080/favdrink");
   }
 
-  getOccupations() {
-    return this.occupations;
+  getOccupations(): Observable<Occupations[]> {
+    return this.http.get<Occupations[]>("http://localhost:8080/occupations");
+  }
+  getClans(): Observable<Clans[]> {
+    return this.http.get<Clans[]>("http://localhost:8080/clans");
   }
 
-  getClans() {
-    return this.clans;
-  }
-
-  getWeapons() {
-    return this.weapons;
+  getWeapons(): Observable<Weapons[]> {
+    return this.http.get<Weapons[]>("http://localhost:8080/weapons");
   }
 
   getDwarves(): Observable<Dwarf[]> {
     return this.http.get<Dwarf[]>(
-      "https://forge-server-an.herokuapp.com/api/dwarves"
+      // "https://forge-server-an.herokuapp.com/api/dwarves"
+      "http://localhost:8080/dwarf"
     );
   }
   // api sever information link above
 
   addDwarf(dwarf: Dwarf) {
     return this.http.post(
-      "https://forge-server-an.herokuapp.com/api/dwarves",
+      // "https://forge-server-an.herokuapp.com/api/dwarves"
+      "http://localhost:8080/dwarf",
       dwarf
     );
   }
-  deleteDwarf(id: string) {
+  deleteDwarf(id: number) {
     return this.http.delete(
-      "https://forge-server-an.herokuapp.com/api/dwarves/" + id
+      // "https://forge-server-an.herokuapp.com/api/dwarves/" + id
+      "http://localhost:8080/dwarf/" + id
     );
   }
 

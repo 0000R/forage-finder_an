@@ -2,6 +2,10 @@ import { Component, OnInit } from "@angular/core";
 import { Dwarf } from "../dwarf";
 import { DwarfService } from "../dwarf.service";
 import { Router } from "@angular/router";
+import { FavDrink } from "../favDrink";
+import { Occupations } from "../occupations";
+import { Clans } from "../../clans";
+import { Weapons } from "../weapons";
 @Component({
   selector: "app-profile",
   templateUrl: "./profile.component.html",
@@ -10,13 +14,13 @@ import { Router } from "@angular/router";
 export class ProfileComponent implements OnInit {
   currentDwarf: Dwarf = new Dwarf();
 
-  favoriteDrinks: string[];
+  favoriteDrinks: FavDrink[] = [];
 
-  occupations: string[];
+  occupations: Occupations[] = [];
 
-  clans: string[];
+  clans: Clans[] = [];
 
-  weapons: string[];
+  weapons: Weapons[] = [];
 
   submitDwarf() {
     if (
@@ -36,9 +40,21 @@ export class ProfileComponent implements OnInit {
   constructor(private dwarfService: DwarfService, private router: Router) {}
 
   ngOnInit() {
-    this.favoriteDrinks = this.dwarfService.getDrinks();
-    this.occupations = this.dwarfService.getOccupations();
-    this.clans = this.dwarfService.getClans();
-    this.weapons = this.dwarfService.getWeapons();
+    // this.favoriteDrinks = this.dwarfService.getDrinks();
+    this.dwarfService.getDrinks().subscribe(data => {
+      this.favoriteDrinks = data;
+    });
+
+    this.dwarfService.getOccupations().subscribe(data => {
+      this.occupations = data;
+    });
+
+    this.dwarfService.getClans().subscribe(data => {
+      this.clans = data;
+    });
+
+    this.dwarfService.getWeapons().subscribe(data => {
+      this.weapons = data;
+    });
   }
 }

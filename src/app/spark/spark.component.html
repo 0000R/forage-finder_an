@@ -12,12 +12,12 @@
         <br/>Height: {{dwarf.height}}
         <br/>Weapon: {{dwarf.weapon}}
         <br/> Favorite Drink:{{dwarf.favoriteDrink}}
-        <br/> Beard length:{{dwarf.beardLength}} {{dwarf._id}}
+        <br/> Beard length:{{dwarf.beardLength}} {{dwarf.id}}
       </p>
 
     </div>
     <div class="card-footer">
-      <button class="btn btn-danger" (click)="deleteDwarf(dwarf._id)">Remove Profile</button>
+      <button class="btn btn-danger" (click)="deleteDwarf(dwarf.id)">Remove Profile</button>
     </div>
 
   </div>
